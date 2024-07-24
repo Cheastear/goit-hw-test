@@ -1,0 +1,12 @@
+.navigation {
+  display: flex;
+  gap: 25px;
+}
+
+.link {
+  color: #3470ff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}

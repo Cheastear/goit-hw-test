@@ -1,0 +1,163 @@
+.modal {
+  position: relative;
+  border-radius: 24px;
+  max-width: 450px;
+  height: auto;
+  background-color: #fff;
+  padding: 40px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #12141780;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("../../images/close.svg");
+  border: 0 solid #000;
+  content: "";
+}
+.close:after {
+  position: absolute;
+  width: 24px;
+  height: 1px;
+  background-color: #000;
+}
+.close:hover {
+  background-color: transparent;
+  border: 0 solid #000;
+}
+.close:focus {
+  overlay: none;
+}
+
+.favorite {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../images/favoriteIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.img {
+  width: auto;
+  overflow: hidden;
+}
+
+.img-src {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+}
+
+.label {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
+.blue {
+  color: #3470ff;
+}
+
+.small-description {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #12141780;
+}
+.car-description {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+.accessories {
+  margin-top: 24px;
+  color: #121417;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}
+
+.rental-condition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.condition {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  text-align: center;
+
+  background-color: #f9f9f9;
+  padding: 7px 14px;
+  border-radius: 35px;
+}
+
+.rentCarBtn {
+  width: 168px;
+  height: 44px;
+  margin-top: 24px;
+  padding: 12px 0;
+  border: 0 solid #000;
+  border-radius: 12px;
+
+  background-color: #3470ff;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rentCarBtn:hover {
+  background-color: #0b44cd;
+}

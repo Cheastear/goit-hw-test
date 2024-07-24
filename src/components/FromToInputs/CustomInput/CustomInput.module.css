@@ -1,0 +1,33 @@
+.input {
+  width: 90px;
+  border: 0 solid #000;
+  background-color: transparent;
+  color: #121417;
+  padding: 0 0 0 8px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}
+.input:focus {
+  outline: none;
+}
+
+.label {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}
+
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+}

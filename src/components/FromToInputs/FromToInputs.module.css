@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+
+  padding: 14px 24px;
+  width: 250px;
+  border: 0px solid #000;
+  border-radius: 14px;
+  background-color: #f7f7fb;
+  color: #121417;
+}
+
+.vertical-separator {
+  border-left: 1px solid #8a8a8933;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}

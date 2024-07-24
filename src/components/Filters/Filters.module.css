@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: -24px;
+
+  color: #8a8a89;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+}
+
+.select {
+  width: 250px;
+  padding-top: 25px;
+}
+
+.button {
+  width: 136px;
+  height: 48px;
+  border-radius: 12px;
+  border: 0 solid #000;
+  color: #fff;
+  background-color: #3470ff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #0b44cd;
+}
