@@ -6,6 +6,7 @@ const getDefaultStyles = (width: string): StylesConfig<OptionType, false> => ({
   control: (provided, state) => ({
     ...provided,
     width: width,
+    boxSizing: "border-box",
     height: 48,
     borderRadius: 14,
     background: "#F7F7FB",
@@ -51,6 +52,7 @@ const getDefaultStyles = (width: string): StylesConfig<OptionType, false> => ({
     ...provided,
     backgroundColor: "transparent",
     color: state.isSelected ? "#121417" : "#12141733",
+    padding: "4px 18px",
   }),
 });
 

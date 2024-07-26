@@ -5,7 +5,8 @@
   gap: 3px;
 
   padding: 14px 24px;
-  width: 250px;
+  width: 320px;
+  box-sizing: border-box;
   border: 0px solid #000;
   border-radius: 14px;
   background-color: #f7f7fb;
