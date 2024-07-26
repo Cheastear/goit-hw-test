@@ -7,7 +7,7 @@ export type Mileage = {
 };
 export type Filter = {
   makes: string;
-  minPrice: number;
+  maxPrice: number;
   mileage: Mileage;
 };
 
@@ -20,7 +20,7 @@ export type FilterState = {
 const initialState: FilterState = {
   item: {
     makes: "",
-    minPrice: 0,
+    maxPrice: 0,
     mileage: {
       from: 0,
       to: 0,

@@ -44,7 +44,8 @@ const CatalogPage = () => {
   const filteredCatalog = catalog.filter(
     (elem) =>
       elem.make.includes(filters.makes) &&
-      parseInt(elem.rentalPrice.replace("$", "")) >= filters.minPrice &&
+      parseInt(elem.rentalPrice.replace("$", "")) <=
+        (filters.maxPrice !== 0 ? filters.maxPrice : 999) &&
       elem.mileage >= filters.mileage.from &&
       (filters.mileage.to != 0 ? elem.mileage <= filters.mileage.to : 9999)
   );

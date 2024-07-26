@@ -38,7 +38,7 @@ const Filters = () => {
 
     const option: Filter = {
       makes: values.makes.value == "0" ? "" : values.makes.value,
-      minPrice: parseInt(values.price.value) || 0,
+      maxPrice: parseInt(values.price.value) || 0,
       mileage: {
         from: parseInt(values.from) || 0,
         to: parseInt(values.to) || 0,
@@ -58,8 +58,8 @@ const Filters = () => {
   const initialValues: FormValues = {
     makes: { value: filters.makes, label: filters.makes },
     price: {
-      value: filters.minPrice.toString(),
-      label: `${filters.minPrice}$`,
+      value: filters.maxPrice.toString(),
+      label: filters.maxPrice != 0 ? `${filters.maxPrice}$` : "",
     },
     from: filters.mileage.from.toString(),
     to: filters.mileage.from.toString(),

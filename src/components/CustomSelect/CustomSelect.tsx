@@ -80,7 +80,7 @@ const CustomSelect = ({ field, form, array, width = "225px" }: Prop) => {
 
   const [value, setValue] = useState<
     SingleValue<{ value: string; label: string }>
-  >({ value: "0", label: "" });
+  >(field.value);
 
   const handleChange = (
     option: SingleValue<{ value: string; label: string }>
