@@ -5,17 +5,16 @@ import css from "./LeanMore.module.css";
 import toast, { Toaster } from "react-hot-toast";
 
 type Prop = {
-  isOpen: boolean;
   item: CatalogItem;
   onClose: () => void;
 };
-const LeanMore = ({ isOpen, item, onClose }: Prop) => {
+const LeanMore = ({ item, onClose }: Prop) => {
   const handleRentCar = () => {
     toast.success("Contact with us: +380730000000");
   };
   return (
     <Modal
-      isOpen={isOpen}
+      isOpen={true}
       className={css.modal}
       overlayClassName={css.overlay}
       onRequestClose={onClose}

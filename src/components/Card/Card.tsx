@@ -72,7 +72,7 @@ const Card = ({ item }: Prop) => {
           Lean more
         </button>
       </div>
-      <LeanMore isOpen={isOpenModal} item={item} onClose={handloOnCloseModla} />
+      {isOpenModal && <LeanMore item={item} onClose={handloOnCloseModla} />}
     </div>
   );
 };
