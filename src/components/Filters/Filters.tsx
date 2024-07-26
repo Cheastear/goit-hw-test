@@ -62,7 +62,7 @@ const Filters = () => {
       label: filters.maxPrice != 0 ? `${filters.maxPrice}$` : "",
     },
     from: filters.mileage.from.toString(),
-    to: filters.mileage.from.toString(),
+    to: filters.mileage.to.toString(),
   };
   return (
     <Formik initialValues={initialValues} onSubmit={handleSumbit}>
