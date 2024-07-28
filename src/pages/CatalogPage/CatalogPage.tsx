@@ -70,7 +70,8 @@ const CatalogPage = () => {
                   ? 12
                   : filteredCatalog.length % loadLimit) -
                 4 &&
-            filteredCatalog.length != loadLimit
+            filteredCatalog.length != loadLimit &&
+            filteredCatalog.length == catalog.length
           ) {
             return <Card key={elem.id} item={elem} ref={cardRef} />;
           }
