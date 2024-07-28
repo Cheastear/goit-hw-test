@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { CatalogItem } from "../../redux/catalog/slice";
 import LeanMore from "../LeanMore/LeanMore";
 import css from "./Card.module.css";
@@ -14,7 +14,7 @@ type Prop = {
   item: CatalogItem;
 };
 
-const Card = ({ item }: Prop) => {
+const Card = forwardRef<HTMLDivElement, Prop>(({ item }: Prop, ref) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const dispatch: AppDispatch = useDispatch();
   const favorites = useSelector(selectFavorite);
@@ -32,7 +32,7 @@ const Card = ({ item }: Prop) => {
   };
 
   return (
-    <div className={css.container}>
+    <div className={css.container} ref={ref}>
       <label className={css.slider}>
         <input
           type="checkbox"
@@ -75,5 +75,5 @@ const Card = ({ item }: Prop) => {
       {isOpenModal && <LeanMore item={item} onClose={handloOnCloseModla} />}
     </div>
   );
-};
+});
 export default Card;

@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, RefObject, createRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   selectCatalog,
   selectIsEnd,
@@ -28,11 +27,20 @@ const CatalogPage = () => {
   const isEnd = useSelector(selectIsEnd);
   const isLoading = useSelector(selectIsLoading);
   const [pageCounter, setPageCounter] = useState(1);
+  const cardRef: RefObject<HTMLDivElement> = createRef();
 
   useEffect(() => {
     setPageCounter(1);
     dispatch(getCatalogThunk({ page: 1, limit: loadLimit }));
   }, [dispatch]);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      cardRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [catalog, cardRef]);
 
   const onLoadMore = () => {
     dispatch(appendCatalogThunk({ page: pageCounter + 1, limit: loadLimit }));
@@ -47,14 +55,25 @@ const CatalogPage = () => {
       parseInt(elem.rentalPrice.replace("$", "")) <=
         (filters.maxPrice !== 0 ? filters.maxPrice : 999) &&
       elem.mileage >= filters.mileage.from &&
-      (filters.mileage.to != 0 ? elem.mileage <= filters.mileage.to : 9999)
+      (filters.mileage.to !== 0 ? elem.mileage <= filters.mileage.to : 9999)
   );
 
   return (
     <div className={css["page-container"]}>
       <Filters />
       <div className={css.container}>
-        {filteredCatalog.map((elem: CatalogItem) => {
+        {filteredCatalog.map((elem: CatalogItem, index) => {
+          if (
+            index ===
+              filteredCatalog.length -
+                (filteredCatalog.length % loadLimit == 0
+                  ? 12
+                  : filteredCatalog.length % loadLimit) -
+                4 &&
+            filteredCatalog.length != loadLimit
+          ) {
+            return <Card key={elem.id} item={elem} ref={cardRef} />;
+          }
           return <Card key={elem.id} item={elem} />;
         })}
       </div>
