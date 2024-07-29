@@ -10,3 +10,6 @@
   line-height: 20px;
   text-align: left;
 }
+.active {
+  color: #121417;
+}
