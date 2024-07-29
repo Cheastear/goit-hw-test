@@ -1,10 +1,11 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header/Header";
-import HomePage from "./pages/HomePage/HomePage";
-import CatalogPage from "./pages/CatalogPage/CatalogPage";
-import FavoritePage from "./pages/FavoritePage/FavoritePage";
+const Header = lazy(() => import("./components/Header/Header"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
+const FavoritePage = lazy(() => import("./pages/FavoritePage/FavoritePage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" Component={HomePage} />
           <Route path="/catalog" Component={CatalogPage} />
           <Route path="/favorites" Component={FavoritePage} />
+          <Route path="*" Component={NotFoundPage} />
         </Routes>
       </Suspense>
     </>
