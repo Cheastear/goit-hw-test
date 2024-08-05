@@ -13,3 +13,19 @@
   width: 1200px;
   margin: 50px auto;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 882px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    width: 578px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 274px;
+  }
+}
